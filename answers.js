@@ -99,3 +99,23 @@ function factorial(num){
         }
     else {return "Please provide a number as input";}
 }
+
+/*returns the longest word in that phrase. 
+If the phrase contains more than one such word, return the first occurrence. Test your function on a few inputs.*/
+function longestWord(phrase){
+    
+    var word;
+    var wordList = [];
+    
+    if (typeof phrase === 'string'){
+        wordList = phrase.split(' ').sort(function(a,b) {  
+        if (a.length > b.length) return -1;
+        if (a.length < b.length) return 1;
+        return 0;
+        }
+        );
+        
+        return wordList.shift();
+    }
+    else return 'Please provide a phrase';
+}
