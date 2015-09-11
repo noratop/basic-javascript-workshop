@@ -34,33 +34,39 @@ Otherwise return 0.*/
 
 // was more fun to me using switch/case rather than using if/else...
 function calcul(operation,num1,num2) {
+    var result;
     if (typeof num1 === 'number' && typeof num2 === 'number' && typeof operation === 'string'){
         switch(operation) {
             case 'add':
-                return num1+num2;
+                result=num1+num2;
                 break;
             case 'subtract':
-                return math.abs(num1-num2);
+                result=Math.abs(num1-num2);
                 break;
             case 'mult':
-                return num1*num2;
+                result=num1*num2;
                 break;
             case 'div':
-                return Math.max(num1,num2)/Math.min(num1,num2);
+                result=Math.max(num1,num2)/Math.min(num1,num2);
                 break;
             default:
-            return 0;
+            result=0;
         }
+        return result;
     }
     else {console.log("Please provide an operation name ('add' or 'substract' or 'mult' or 'div') and two numbers");}
 }
 
 //returns the string repeated that many number of times
-function repeatText(str,repeat){
-    if (typeof str === 'string' && typeof num === 'number'){
+function repeatText(text,repeat){
+    var returnMessage=[];
+    if (typeof text === 'string' && typeof repeat === 'number' && repeat > 0){
         while(repeat){
-            
+            repeat--;
+            returnMessage.push(text);
         }
+        return returnMessage.join('');
     }
-    else {console.log("Please provide a string as the first input and a number as a second input");}
+    else {console.log("Please provide a string as the first input and a number (positive) as a second input");}
 }
+
