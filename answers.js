@@ -13,3 +13,7 @@ function charPosition(string,number) {
     return string[number];
 }
 
+// return the sum of two numbers
+function sum(num1,num2){
+    return num1 + num2;
+}
