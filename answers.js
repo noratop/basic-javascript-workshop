@@ -17,3 +17,8 @@ function charPosition(string,number) {
 function sum(num1,num2){
     return num1 + num2;
 }
+
+// return multiplication of two numbers
+function multiply(num1,num2){
+    return num1 * num2;
+}
