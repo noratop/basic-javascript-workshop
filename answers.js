@@ -31,6 +31,8 @@ function multiply(num1,num2){
 /* If the string is ‘add’, then return the sum of the numbers. If the string is ‘subtract’, return the difference. 
 If the string is ‘mult’, return the product. If the string is ‘div’, return the ratio. 
 Otherwise return 0.*/
+
+// was more fun to me using switch/case rather than using if/else...
 function calcul(operation,num1,num2) {
     if (typeof num1 === 'number' && typeof num2 === 'number' && typeof operation === 'string'){
         switch(operation) {
