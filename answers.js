@@ -40,19 +40,27 @@ function calcul(operation,num1,num2) {
                 return num1+num2;
                 break;
             case 'subtract':
-                if (num1>=num2){return num1-num2;}
-                else {return num2-num1;}
+                return math.abs(num1-num2);
                 break;
             case 'mult':
                 return num1*num2;
                 break;
             case 'div':
-                if (num1>=num2){return num1/num2;}
-                else {return num2/num1;}
+                return Math.max(num1,num2)/Math.min(num1,num2);
                 break;
             default:
             return 0;
         }
     }
     else {console.log("Please provide an operation name ('add' or 'substract' or 'mult' or 'div') and two numbers");}
+}
+
+//returns the string repeated that many number of times
+function repeatText(str,repeat){
+    if (typeof str === 'string' && typeof num === 'number'){
+        while(repeat){
+            
+        }
+    }
+    else {console.log("Please provide a string as the first input and a number as a second input");}
 }
