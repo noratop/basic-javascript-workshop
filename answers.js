@@ -32,20 +32,25 @@ function multiply(num1,num2){
 If the string is ‘mult’, return the product. If the string is ‘div’, return the ratio. 
 Otherwise return 0.*/
 function calcul(operation,num1,num2) {
-    switch(operation) {
-        case 'add':
-            return num1+num2;
-            break;
-        case 'subtract':
-            if (num1>=num2){return num1-num2;}
-            else {return num2-num1;}
-            break;
-        case 'mult':
-            return num1+num2;
-            break;
-        case 'div':
-            
-        default:
-        return 0;
+    if (typeof num1 === 'number' && typeof num2 === 'number' && typeof operation === 'string'){
+        switch(operation) {
+            case 'add':
+                return num1+num2;
+                break;
+            case 'subtract':
+                if (num1>=num2){return num1-num2;}
+                else {return num2-num1;}
+                break;
+            case 'mult':
+                return num1*num2;
+                break;
+            case 'div':
+                if (num1>=num2){return num1/num2;}
+                else {return num2/num1;}
+                break;
+            default:
+            return 0;
+        }
     }
+    else {console.log("Please provide an operation name ('add' or 'substract' or 'mult' or 'div') and two numbers");}
 }
