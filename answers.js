@@ -70,3 +70,14 @@ function repeatText(text,repeat){
     else {console.log("Please provide a string as the first input and a number (positive) as a second input");}
 }
 
+// Reverse a string
+function reverse(str){
+    var reverseStr=[];
+    if (typeof str === 'string'){
+        for (var i = 1; i <= str.length; i++){
+            reverseStr.push(str[str.length-i]);
+        }
+        return reverseStr.join(''); 
+    }
+    else {console.log("Please provide a string as input");}
+}
