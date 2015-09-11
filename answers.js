@@ -60,9 +60,10 @@ function calcul(operation,num1,num2) {
 //returns the string repeated that many number of times
 function repeatText(text,repeat){
     var returnMessage=[];
+    var times = Math.abs(repeat);
     if (typeof text === 'string' && typeof repeat === 'number' && repeat > 0){
-        while(repeat){
-            repeat--;
+        while(times){
+            times--;
             returnMessage.push(text);
         }
         return returnMessage.join('');
