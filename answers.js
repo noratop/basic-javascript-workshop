@@ -161,3 +161,19 @@ function largestNumber(arrayOfNumber){
         else return 'the array does not contain any number';
     }
 }
+
+
+//returns a filtered array. The filtered array should only contain the truthy values from the initial array
+function filterArray(arrayToFilter){
+
+    var filteredArray=[];
+
+    if (arrayToFilter instanceof Array){
+        filteredArray = arrayToFilter.filter(function(element){
+            if (element) return true;
+            else false;
+        });
+        
+        return filteredArray;
+    }
+}
