@@ -106,7 +106,7 @@ function longestWord(phrase){
     var wordList = [];
     
     if (typeof phrase === 'string'){
-        wordList = phrase.split(' ').sort(function(a,b) {  
+        wordList = phrase.split(/[\s,./'\!}{"|?><+_)(*&^!\[\]]/g).sort(function(a,b) {  
         if (a.length > b.length) return -1;
         if (a.length < b.length) return 1;
         return 0;
@@ -138,3 +138,4 @@ function camelCase(phrase){
     }
     else return 'Please provide a phrase';
 }
+/[\s]|[.]|[,]/
