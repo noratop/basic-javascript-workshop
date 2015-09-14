@@ -121,7 +121,7 @@ function longestWord(phrase){
 /* returns the same phrase with every word capitalized. For example, if you pass your function "hello world", 
 it should return "Hello World" and if you pass it "HELLO WORLD" or even "HeLLo WoRLD", it will also return "Hello World". 
 Test your function of a few inputs.*/
-function camelCase(phrase){
+function capitalize(phrase){
     
     var wordList = [];
     
@@ -129,13 +129,9 @@ function camelCase(phrase){
         wordList = phrase.split(' ');
         
         wordList.forEach(function(element, index) {
-            wordList[index] = element.toLowerCase();
-            wordList[index][0] = wordList[index][0].toUpperCase();
-            console.log(wordList[index][0]);
-        }
-        );
-        return wordList;
+            wordList[index] = element[0].toUpperCase() + element.substr(1).toLowerCase();
+        });
+    return wordList.join(' ');
     }
-    else return 'Please provide a phrase';
+    else return 'capitalize requires a text input';
 }
-/[\s]|[.]|[,]/
