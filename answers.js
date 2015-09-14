@@ -135,3 +135,29 @@ function capitalize(phrase){
     }
     else return 'capitalize requires a text input';
 }
+
+//returns the largest number of the array. Test your function on a few inputs
+function largestNumber(arrayOfNumber){
+    if (arrayOfNumber instanceof Array){
+        
+        arrayOfNumber = arrayOfNumber.sort(function(a,b) {
+                if (typeof a != 'number') return 1;
+                if (typeof b != 'number') return -1;
+                return 0;
+            });
+        
+        console.log(arrayOfNumber);
+            
+        arrayOfNumber = arrayOfNumber.sort(function(a,b) {
+                if (a > b) return -1;
+                if (a < b) return 1;
+                return 0;
+            });
+        
+        console.log(arrayOfNumber);
+       
+        var result = arrayOfNumber.shift();
+        if (typeof result ==='number') return result;
+        else return 'the array does not contain any number';
+    }
+}
