@@ -177,3 +177,16 @@ function filterArray(arrayToFilter){
         return filteredArray;
     }
 }
+
+//returns the sum of all the numbers in the array
+function sumNumbersInArray(arrayOfNumbers){
+    var result = 0;
+    
+    if (arrayOfNumbers instanceof Array){
+        arrayOfNumbers.forEach(function(element){
+            if (typeof element ==="number") result += element;
+        });
+        
+        return result;
+    }
+}
