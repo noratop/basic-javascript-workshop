@@ -35,26 +35,25 @@ Otherwise return 0.*/
 // was more fun to me using switch/case rather than using if/else...
 function calcul(operation,num1,num2) {
     var result;
-    if (typeof num1 === 'number' && typeof num2 === 'number' && typeof operation === 'string'){
+    if (typeof num1 === 'number' && typeof num2 === 'number'){
         switch(operation) {
             case 'add':
                 result=num1+num2;
                 break;
             case 'subtract':
-                result=Math.abs(num1-num2);
+                result=num1-num2;
                 break;
             case 'mult':
                 result=num1*num2;
                 break;
             case 'div':
-                result=Math.max(num1,num2)/Math.min(num1,num2);
+                result=num1/num2;
                 break;
             default:
             result=0;
         }
         return result;
     }
-    else {return "Please provide an operation name ('add' or 'substract' or 'mult' or 'div') and two numbers";}
 }
 
 //returns the string repeated that many number of times
@@ -104,7 +103,6 @@ function factorial(num){
 If the phrase contains more than one such word, return the first occurrence. Test your function on a few inputs.*/
 function longestWord(phrase){
     
-    var word;
     var wordList = [];
     
     if (typeof phrase === 'string'){
@@ -116,6 +114,27 @@ function longestWord(phrase){
         );
         
         return wordList.shift();
+    }
+    else return 'Please provide a phrase';
+}
+
+/* returns the same phrase with every word capitalized. For example, if you pass your function "hello world", 
+it should return "Hello World" and if you pass it "HELLO WORLD" or even "HeLLo WoRLD", it will also return "Hello World". 
+Test your function of a few inputs.*/
+function camelCase(phrase){
+    
+    var wordList = [];
+    
+    if (typeof phrase === 'string'){
+        wordList = phrase.split(' ');
+        
+        wordList.forEach(function(element, index) {
+            wordList[index] = element.toLowerCase();
+            wordList[index][0] = wordList[index][0].toUpperCase();
+            console.log(wordList[index][0]);
+        }
+        );
+        return wordList;
     }
     else return 'Please provide a phrase';
 }
