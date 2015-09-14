@@ -190,3 +190,23 @@ function sumNumbersInArray(arrayOfNumbers){
         return result;
     }
 }
+
+/*takes two arrays, and returns an array of all elements that are only 
+in one array. For example, with [1,2,3] and [1,2,4,5] the function 
+should return [3,4,5]*/
+
+function elementsInCommon(array1,array2){
+
+	var result = [];
+
+    if (array1 instanceof Array && array2 instanceof Array) {
+    	array1.sort();
+    	array2.sort();
+
+    	array1.forEach(function(element,index){
+    		if (element === array2[index]) result.push(element);
+    	});
+
+    return result;
+    }
+}
